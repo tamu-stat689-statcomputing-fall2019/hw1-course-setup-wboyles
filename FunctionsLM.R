@@ -6,7 +6,7 @@
 generateY <- function(X, beta, sigma, seed = 5832652){
   set.seed(seed) # set a seed
   n = nrow( as.matrix(X) ) # get the number of observations
-  Y = X %*% beta + rnorm(n) # calculate Y using Y=Xb+e where e comes from standard normal
+  Y = X %*% beta + rnorm(n, sd=sigma) # calculate Y using Y=Xb+e where e comes from standard normal
   
   # Return Y
   return(Y)
