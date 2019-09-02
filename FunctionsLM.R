@@ -4,7 +4,9 @@
 # sigma - standard deviation of the noise
 # seed  - starting seed value
 generateY <- function(X, beta, sigma, seed = 5832652){
-  #[ToDo] Set seed and generate Y following linear model
+  set.seed(seed) # set a seed
+  n = nrow( as.matrix(X) ) # get the number of observations
+  Y = X %*% beta + rnorm(n) # calculate Y using Y=Xb+e where e comes from standard normal
   
   # Return Y
   return(Y)
