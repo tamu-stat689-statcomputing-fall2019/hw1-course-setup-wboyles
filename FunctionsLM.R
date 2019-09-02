@@ -17,6 +17,8 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # Y -response
 calculateBeta <- function(X, Y){
   # Calculate beta_LS
+  # below should give us (XtX)^-1(XtY)
+  beta_LS = solve(crossprod(X), crossprod(X, Y))
   
   # Return beta
   return(beta_LS)
